@@ -10,5 +10,9 @@ RUN apt-get -y update && apt-get -qq -y install apache2
 #Listen on port 80 by default.
 EXPOSE 80/tcp
 
+#Overwrite original index.html file (Copy website)
+COPY ./index.html /var/www/html/
+COPY ./Bootbash.sh /Bootbash.sh
+
 #Start webserver when the container starts
-ENTRYPOINT ["/usr/sbin/apache2ctl", "-D FOREGROUND"]
+ENTRYPOINT ["/Bootbash.sh"]
