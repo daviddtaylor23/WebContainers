@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web2-test
+  labels:
+    app: web2-test
+    env: development
+    dev-lead: david
+    application_type: website
+    release-version: "0.7"
+spec:
+  containers:
+  - name: web-server
+    image: daviddtaylor/web2:latest
